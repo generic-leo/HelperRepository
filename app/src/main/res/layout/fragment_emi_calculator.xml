@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.leo.homeloan.calculator.emi.EmiCalculatorModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/calculateLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_5">
+
+                    <com.leo.homeloan.util.ICICITextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loan Amount"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dimen_15" />
+
+                    <com.leo.homeloan.util.ICICIEditTextBold
+                        android:id="@+id/edMonthlyIncome"
+                        android:layout_width="@dimen/dimen_150"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_5"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:background="@drawable/drawable_rectangle_border_gray"
+                        android:gravity="center"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:paddingLeft="@dimen/dimen_10"
+                        android:paddingRight="@dimen/dimen_10"
+                        android:singleLine="true"
+                        android:text="@={viewModel.strMonthlyIncome}"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/txt_size_17" />
+
+                    <SeekBar
+                        android:id="@+id/sbMonthlyIncome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="297"
+                        android:progress="@={viewModel.loanAmount}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <com.leo.homeloan.util.ICICITextView
+                            android:layout_width="@dimen/dimen_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/dimen_10"
+                            android:text="3L"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/dimen_11"
+                            android:textStyle="bold" />
+
+                        <com.leo.homeloan.util.ICICITextView
+                            android:layout_width="@dimen/dimen_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:paddingRight="@dimen/dimen_10"
+                            android:text="10,00L"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/dimen_11"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <com.leo.homeloan.util.ICICITextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(Value in Lakhs)"
+                        android:visibility="gone"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dimen_11" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginBottom="@dimen/dimen_5"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:background="#e2e2e2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_5">
+
+                    <com.leo.homeloan.util.ICICITextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loan Tenure"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dimen_15" />
+
+                    <com.leo.homeloan.util.ICICIEditTextBold
+                        android:id="@+id/edLoanTenure"
+                        android:layout_width="@dimen/dimen_150"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_5"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:background="@drawable/drawable_rectangle_border_gray"
+                        android:gravity="center"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:paddingLeft="@dimen/dimen_10"
+                        android:paddingRight="@dimen/dimen_10"
+                        android:text="@={viewModel.strLoanTenure}"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/txt_size_17" />
+
+                    <SeekBar
+                        android:id="@+id/sbLoanTenure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="@{viewModel.tenureEnd}"
+                        android:progress="@={viewModel.tenureYears}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <com.leo.homeloan.util.ICICITextView
+                            android:layout_width="@dimen/dimen_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/dimen_10"
+                            android:text="@{viewModel.strTenureStart}"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/dimen_11"
+                            android:textStyle="bold" />
+
+                        <com.leo.homeloan.util.ICICITextView
+                            android:layout_width="@dimen/dimen_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:paddingRight="@dimen/dimen_10"
+                            android:text="@{viewModel.strTenureEnd}"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/dimen_11"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/dimen_10"
+                            android:checked="@={viewModel.tenureTypeYear}"
+                            android:text="Years" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="@{viewModel.tenureTypeYear == true ? false : true}"
+                            android:text="Months" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_marginBottom="@dimen/dimen_5"
+                    android:layout_marginLeft="@dimen/dimen_20"
+                    android:layout_marginRight="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_5"
+                    android:background="#e2e2e2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dimen_5"
+                    android:paddingTop="@dimen/dimen_5">
+
+                    <com.leo.homeloan.util.ICICITextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rate of Interest(%)"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dimen_15" />
+
+                    <com.leo.homeloan.util.ICICIEditTextBold
+                        android:id="@+id/edRateOfInterest"
+                        android:layout_width="@dimen/dimen_150"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_5"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:background="@drawable/drawable_rectangle_border_gray"
+                        android:gravity="center"
+                        android:imeOptions="actionDone"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5"
+                        android:paddingLeft="@dimen/dimen_10"
+                        android:paddingRight="@dimen/dimen_10"
+                        android:singleLine="true"
+                        android:text="@={viewModel.strRateOfIncome}"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/txt_size_17" />
+
+                    <SeekBar
+                        android:id="@+id/sbROI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="10"
+                        android:progress="@={viewModel.rateOfInterest}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <com.leo.homeloan.util.ICICITextView
+                            android:layout_width="@dimen/dimen_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="@dimen/dimen_10"
+                            android:text="@{String.valueOf(viewModel.RATEOI_MIN).concat(viewModel.SEPARATOR_PERCENT)}"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/dimen_11"
+                            android:textStyle="bold" />
+
+                        <com.leo.homeloan.util.ICICITextView
+                            android:layout_width="@dimen/dimen_0"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:paddingRight="@dimen/dimen_10"
+                            android:text="@{String.valueOf(viewModel.RATEOI_MAX).concat(viewModel.SEPARATOR_PERCENT)}"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/dimen_11"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <com.leo.homeloan.util.ICICITextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Default value of Rate of Interest set at 7%"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/dimen_11" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_5"
+                    android:background="@color/lighten_grey"
+                    android:gravity="center"
+                    android:visibility="@{viewModel.emiAmtShow ? View.VISIBLE : View.GONE}"
+                    android:orientation="vertical">
+
+                    <com.leo.homeloan.util.ICICITextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5"
+                        android:gravity="center"
+                        android:text="Your EMI amount is"
+                        android:textColor="@color/light_grey"
+                        android:textSize="@dimen/txt_size_15" />
+
+                    <com.leo.homeloan.util.ICICITextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dimen_5"
+                        android:gravity="center"
+                        android:textColor="@color/light_black"
+                        android:text="@{viewModel.eligibleAmt}"
+                        android:textSize="@dimen/txt_size_25"
+                        tools:text="Rs. 15,00,000" />
+                </LinearLayout>
+
+                <com.leo.homeloan.util.ICICITextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_2"
+                    android:gravity="center"
+                    android:text="Disclaimer: EMI so computed is subject to no other ongoing EMI on any other Loan."
+                    android:textColor="@color/light_black"
+                    android:textSize="@dimen/dimen_15"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/calculateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dimen_10"
+            android:paddingTop="@dimen/dimen_10"
+            android:visibility="gone">
+
+            <com.leo.homeloan.util.ICICIButton
+                android:id="@+id/btnCalculate"
+                android:layout_width="@dimen/dimen_150"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_5"
+                android:paddingTop="@dimen/dimen_5"
+                android:text="Calculate"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dimen_20" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

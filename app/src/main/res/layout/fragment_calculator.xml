@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.leo.homeloan.calculator.CalculatorModel"></variable>
+    </data>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/backgroundHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_40"
+        android:background="#3A3A3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+
+    <com.leo.homeloan.util.ICICITextView
+        android:id="@+id/btnEligibilityCalculator"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_0"
+        android:gravity="center"
+        android:text="Eligibility Calculator"
+        android:textSize="@dimen/dimen_15"
+        android:textColor="@{model.showEMI == false ? @color/cal_txt_selected : @color/cal_txt_unselected }"
+        app:layout_constraintBottom_toBottomOf="@+id/backgroundHeader"
+        app:layout_constraintEnd_toStartOf="@+id/btnEmiCalculator"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundHeader" />
+
+    <com.leo.homeloan.util.ICICITextView
+        android:id="@+id/btnEmiCalculator"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_0"
+        android:gravity="center"
+        android:text="EMI Calculator"
+        android:textSize="@dimen/dimen_15"
+        android:textColor="@{model.showEMI == true ? @color/cal_txt_selected : @color/cal_txt_unselected }"
+        app:layout_constraintBottom_toTopOf="@+id/contentFrameChild"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnEligibilityCalculator"
+        app:layout_constraintTop_toTopOf="@+id/btnEligibilityCalculator" />
+
+
+    <FrameLayout
+        android:id="@+id/contentFrameChild"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundHeader"></FrameLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+</layout>
