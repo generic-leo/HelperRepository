@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></View>
 
-    <com.leo.homeloan.util.ICICITextView
+    <com.leo.homeloan.util.CUSTOMTextView
         android:id="@+id/btnEligibilityCalculator"
         android:layout_width="@dimen/dimen_150"
         android:layout_height="@dimen/dimen_0"
@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/backgroundHeader" />
 
-    <com.leo.homeloan.util.ICICITextView
+    <com.leo.homeloan.util.CUSTOMTextView
         android:id="@+id/btnEmiCalculator"
         android:layout_width="@dimen/dimen_150"
         android:layout_height="@dimen/dimen_0"

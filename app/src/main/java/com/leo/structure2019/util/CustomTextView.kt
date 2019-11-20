@@ -5,7 +5,7 @@ import android.graphics.Typeface
 import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 
-class ICICITextView : AppCompatTextView {
+class CustomTextView : AppCompatTextView {
 
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {

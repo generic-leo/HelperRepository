@@ -60,7 +60,7 @@ import com.leo.homeloan.main.helpers.BaseActivity;
 import com.leo.homeloan.main.helpers.ViewModelFactory;
 import com.leo.homeloan.menu.MenuFragment;
 import com.leo.homeloan.newuser.RegisterUserFragment;
-import com.leo.homeloan.session.HFCSessionTimer;
+import com.leo.homeloan.session.FCSessionTimer;
 import com.leo.homeloan.session.SessionTimer;
 import com.leo.homeloan.setmpin.SetMpinFragment;
 import com.leo.homeloan.splash.SplashFragment;
@@ -624,7 +624,7 @@ public class MainActivity extends BaseActivity implements SessionTimer.SessionTi
     // region [ Session Management ]
 
     private void initSession(){
-        sessionTimer = new HFCSessionTimer(this, Injector.provideSharedRepository(getApplication()));
+        sessionTimer = new FCSessionTimer(this, Injector.provideSharedRepository(getApplication()));
         sessionTimer.setTime(15, TimeUnit.SECONDS);
     }
 
@@ -690,13 +690,13 @@ public class MainActivity extends BaseActivity implements SessionTimer.SessionTi
 
         switch (sharedPrefRepository.getUserType()){
 
-            case HFCConstants.USER_TYPE_CUSTOMER:
+            case FCConstants.USER_TYPE_CUSTOMER:
                 openModule(Module.CustomerLogin, null);
                 break;
-            case HFCConstants.USER_TYPE_EMPLOYEE:
+            case FCConstants.USER_TYPE_EMPLOYEE:
                 openModule(Module.EmployeeLogin, null);
                 break;
-            case HFCConstants.USER_TYPE_CHANNEL:
+            case FCConstants.USER_TYPE_CHANNEL:
                 openModule(Module.ChannelLogin, null);
                 break;
 

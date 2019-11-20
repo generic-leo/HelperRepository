@@ -9,7 +9,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import androidx.appcompat.widget.AppCompatTextView
 
-class ICICIButtonBold : AppCompatTextView {
+class ButtonBold : AppCompatTextView {
 
     private val backgroundColor = Color.parseColor("#FA842D")
     private val textColor = Color.WHITE

@@ -82,7 +82,7 @@
                     app:layout_constraintEnd_toEndOf="@+id/view"
                     app:layout_constraintTop_toTopOf="@+id/view" />
 
-                <com.leo.homeloan.util.ICICITextView
+                <com.leo.homeloan.util.CUSTOMTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/dimen_8"

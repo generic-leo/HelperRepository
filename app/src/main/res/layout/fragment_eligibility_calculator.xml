@@ -36,14 +36,14 @@
                     android:paddingBottom="@dimen/dimen_5"
                     android:paddingTop="@dimen/dimen_5">
 
-                    <com.leo.homeloan.util.ICICITextView
+                    <com.leo.homeloan.util.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Monthly Income of Borrowers"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/dimen_15" />
 
-                    <com.leo.homeloan.util.ICICIEditTextBold
+                    <com.leo.homeloan.util.CUSTOMEditTextBold
                         android:id="@+id/edMonthlyIncome"
                         android:layout_width="@dimen/dimen_150"
                         android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                        <com.leo.homeloan.util.ICICITextView
+                        <com.leo.homeloan.util.CustomTextView
                             android:layout_width="@dimen/dimen_0"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -82,7 +82,7 @@
                             android:textSize="@dimen/dimen_11"
                             android:textStyle="bold" />
 
-                        <com.leo.homeloan.util.ICICITextView
+                        <com.leo.homeloan.util.CustomTextView
                             android:layout_width="@dimen/dimen_0"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -95,7 +95,7 @@
 
                     </LinearLayout>
 
-                    <com.leo.homeloan.util.ICICITextView
+                    <com.leo.homeloan.util.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="(Value in Thousands)"
@@ -123,14 +123,14 @@
                     android:paddingBottom="@dimen/dimen_5"
                     android:paddingTop="@dimen/dimen_5">
 
-                    <com.leo.homeloan.util.ICICITextView
+                    <com.leo.homeloan.util.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Loan Tenure"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/dimen_15" />
 
-                    <com.leo.homeloan.util.ICICIEditTextBold
+                    <com.leo.homeloan.util.CUSTOMEditTextBold
                         android:id="@+id/edLoanTenure"
                         android:layout_width="@dimen/dimen_150"
                         android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                        <com.leo.homeloan.util.ICICITextView
+                        <com.leo.homeloan.util.CustomTextView
                             android:layout_width="@dimen/dimen_0"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -169,7 +169,7 @@
                             android:textSize="@dimen/dimen_11"
                             android:textStyle="bold" />
 
-                        <com.leo.homeloan.util.ICICITextView
+                        <com.leo.homeloan.util.CustomTextView
                             android:layout_width="@dimen/dimen_0"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -220,14 +220,14 @@
                     android:paddingBottom="@dimen/dimen_5"
                     android:paddingTop="@dimen/dimen_5">
 
-                    <com.leo.homeloan.util.ICICITextView
+                    <com.leo.homeloan.util.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rate of Interest(%)"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/dimen_15" />
 
-                    <com.leo.homeloan.util.ICICIEditTextBold
+                    <com.leo.homeloan.util.CUSTOMEditTextBold
                         android:id="@+id/edRateOfInterest"
                         android:layout_width="@dimen/dimen_150"
                         android:layout_height="wrap_content"
@@ -258,7 +258,7 @@
                         android:orientation="horizontal"
                         android:weightSum="2">
 
-                        <com.leo.homeloan.util.ICICITextView
+                        <com.leo.homeloan.util.CustomTextView
                             android:layout_width="@dimen/dimen_0"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -268,7 +268,7 @@
                             android:textSize="@dimen/dimen_11"
                             android:textStyle="bold" />
 
-                        <com.leo.homeloan.util.ICICITextView
+                        <com.leo.homeloan.util.CustomTextView
                             android:layout_width="@dimen/dimen_0"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -281,7 +281,7 @@
 
                     </LinearLayout>
 
-                    <com.leo.homeloan.util.ICICITextView
+                    <com.leo.homeloan.util.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Default value of Rate of Interest set at 7%"
@@ -299,7 +299,7 @@
                     android:orientation="vertical"
                     android:visibility="@{viewModel.eligibleAmtShow ? View.VISIBLE : View.GONE}">
 
-                    <com.leo.homeloan.util.ICICITextView
+                    <com.leo.homeloan.util.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_5"
@@ -308,7 +308,7 @@
                         android:textColor="@color/light_grey"
                         android:textSize="@dimen/txt_size_15" />
 
-                    <com.leo.homeloan.util.ICICITextViewBold
+                    <com.leo.homeloan.util.CUSTOMTextViewBold
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/dimen_5"
@@ -319,7 +319,7 @@
                         tools:text="Rs. 15,00,000" />
                 </LinearLayout>
 
-                <com.leo.homeloan.util.ICICITextView
+                <com.leo.homeloan.util.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dimen_2"
@@ -344,7 +344,7 @@
             android:paddingTop="@dimen/dimen_10"
             android:visibility="gone">
 
-            <com.leo.homeloan.util.ICICIButton
+            <com.leo.homeloan.util.CUSTOMButton
                 android:id="@+id/btnCalculate"
                 android:layout_width="@dimen/dimen_150"
                 android:layout_height="wrap_content"
